@@ -47,7 +47,7 @@ const Projects = () => {
         'Dynamic project showcase',
         'Contact form integration',
       ],
-      github: 'https://github.com/dhanush-55/portfolio',
+      github: 'https://github.com/dhanush-55/my-portfolio',
       live: 'https://my-portfolio-main1.netlify.app/', // replace with actual deployed link
       color: 'from-purple-500 to-purple-700',
     },
