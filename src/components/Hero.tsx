@@ -91,7 +91,7 @@ const Hero = () => {
               className="border-purple-500 text-purple-400 hover:bg-purple-500/20 hover:scale-105 transition-all duration-300"
             >
               <a
-                href="dhanush resume 4.pdf"
+                href="dhanushresume 6.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
