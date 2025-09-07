@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+/* @import "devicon/devicon.min.css"; */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern Dark Portfolio Design System */
+
+@layer base {
+  :root {
+    /* Core Dark Theme Colors */
+    --background: 217 33% 7%;  /* #0D1117 - Dark Charcoal */
+    --foreground: 0 0% 90%;     /* #E6E6E6 - Light Gray */
+
+    /* Card and Section Backgrounds */
+    --card: 215 28% 11%;        /* #161B22 - Card Background */
+    --card-foreground: 0 0% 90%;
+    
+    --popover: 215 28% 11%;
+    --popover-foreground: 0 0% 90%;
+
+    /* Primary Accent - Cyan/Teal */
+    --primary: 172 100% 70%;     /* #64FFDA - Cyan */
+    --primary-foreground: 217 33% 7%;
+    --primary-glow: 172 100% 70%;
+
+    /* Secondary Accent - Bright Blue */
+    --secondary: 210 100% 67%;    /* #58A6FF - Blue */
+    --secondary-foreground: 217 33% 7%;
+
+    /* Muted Text */
+    --muted: 210 10% 40%;         /* #8B949E - Muted Gray */
+    --muted-foreground: 210 10% 60%;
+
+    /* Accent Colors */
+    --accent: 172 100% 70%;
+    --accent-foreground: 217 33% 7%;
+
+    /* System Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 215 28% 17%;
+    --input: 215 28% 17%;
+    --ring: 172 100% 70%;
+
+    /* Border Radius */
+    --radius: 0.75rem;
+
+    /* Custom Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(172 100% 70%), hsl(210 100% 67%));
+    --gradient-dark: linear-gradient(180deg, hsl(217 33% 7%), hsl(215 28% 11%));
+    --gradient-glow: radial-gradient(circle, hsl(172 100% 70% / 0.15), transparent 70%);
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(172 100% 70% / 0.3);
+    --shadow-card: 0 10px 40px hsl(217 33% 5% / 0.5);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted rounded-full;
+    transition: background-color 0.2s;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/50;
+  }
+
+  /* Selection Color */
+  ::selection {
+    @apply bg-primary/30 text-primary-foreground;
+  }
+}
+
+/* Component Styles */
+@layer components {
+  /* Glow Effect */
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glass Card */
+  .glass-card {
+    @apply bg-card/50 backdrop-blur-md border border-border/50;
+  }
+
+  /* Hover Lift Effect */
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl;
+  }
+
+  /* Tech Badge */
+  .tech-badge {
+    @apply px-3 py-1.5 rounded-lg bg-primary/10 text-primary border border-primary/20 
+           hover:bg-primary/20 hover:border-primary/40 transition-all duration-300;
+  }
+
+  /* Section Container */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+  }
+
+  /* Animated Underline */
+  .link-underline {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-[2px] 
+           after:w-0 after:bg-primary after:transition-all after:duration-300 
+           hover:after:w-full;
+  }
+}
